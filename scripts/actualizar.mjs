@@ -127,9 +127,26 @@ function armar({ tienda, nombre, marca, precio, moneda, precioLista, disponible,
 // ---------- Biblioteca de adaptadores (cada fuente en config.json declara su "tipo") ----------
 
 async function leerVtex(fuente, params) {
-  const { base, categorias = [], catId, catIds = [], excluir = [], paginasMax = 12, paso = 49, searchSub = '' } = params || {};
+  const { base, categorias = [], catId, catIds = [], excluir = [], paginasMax = 12, paso = 49, searchSub = '', orCategorias = false } = params || {};
   const patronCat = categorias.length ? new RegExp('\\/(' + categorias.map(escRg).join('|') + ')\\/', 'i') : null;
   const ids = catIds.length ? catIds : catId ? [catId] : [];
+  // VTEX combina varios "fq" con AND (intersección), no OR. Cuando una fuente necesita
+  // la UNIÓN de varias categorías (p. ej. Zapatillas Hombre + Mujer + Niños), se consulta
+  // cada categoría por separado y se consolidan las filas sin duplicar.
+  if (orCategorias && ids.length > 1) {
+    const vistos = new Set();
+    const productosOr = [];
+    for (const id of ids) {
+      const sub = await leerVtex(fuente, { ...params, catId: undefined, catIds: [id], orCategorias: false });
+      for (const fila of sub.productos) {
+        const clave = fila.url || `${fila.tienda}|${fila.nombre}|${fila.precio}`;
+        if (vistos.has(clave)) continue;
+        vistos.add(clave);
+        productosOr.push(fila);
+      }
+    }
+    return { productos: productosOr, meta: { fuente: `${base.replace(/\/+$/, '')}/api/catalog_system/pub/products/search` } };
+  }
   const productos = [];
   let desde = 0;
   for (let pagina = 0; pagina < paginasMax; pagina++) {
