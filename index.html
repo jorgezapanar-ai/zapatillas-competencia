@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231d1d1b'/%3E%3Cpath d='M10 6h12l-1 8a5 5 0 0 1-10 0z' fill='%23bc9e68'/%3E%3Crect x='15' y='18' width='2' height='7' fill='%23bc9e68'/%3E%3Crect x='11' y='25' width='10' height='2' fill='%23bc9e68'/%3E%3C/svg%3E">
-<title>Precios de competencia · Zapatillas y calzado deportivo · Lima · Media Lab</title>
+<title>Precios de competencia Â· Zapatillas y calzado deportivo Â· Lima Â· Media Lab</title>
 <style>
 :root{--ink:#1d1d1b;--gold:#8a6e3f;--gold-deep:#755935;--paper:#f5f1e9;--cream:#ebe4d8;--line:#d5ccbd;--muted:#70695f;--ribbon:#8d7047;--error:#993e37;--ok:#3f6b4a;--warn:#8a5a1f}
 *{box-sizing:border-box}
@@ -64,7 +64,7 @@ a{color:var(--gold-deep)}
 .badge.ok{border-color:#9dbfa7;background:#e7f0ea;color:var(--ok)}
 .badge.err{border-color:#d8a9a4;background:#f7e8e6;color:var(--error)}
 .badge.warn{border-color:#dcc39a;background:#f6eddd;color:var(--warn)}
-/* catálogo */
+/* catÃ¡logo */
 .controles{display:grid;grid-template-columns:minmax(220px,1.6fr) repeat(4,minmax(140px,1fr)) auto;gap:14px;margin-top:26px;align-items:end}
 .campo label{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:7px}
 .campo input,.campo select{width:100%;font:15px inherit;padding:11px 12px;border:1px solid #8a8175;background:#fffdf9;color:var(--ink)}
@@ -137,8 +137,21 @@ ul.fuentes li b{font-family:Georgia,serif;font-size:15px}
 .chat-tabla tbody tr:last-child td{border-bottom:0}
 .chat-help{margin:6px 0 0;padding-left:20px}
 .chat-help li{font-size:13px;color:#4c463d;margin-bottom:4px}
-.chat-form{display:flex;gap:10px}
+.chat-form{display:flex;gap:10px;align-items:center}
 .chat-form input{flex:1;min-width:0;font:15px inherit;padding:12px;border:1px solid #8a8175;background:#fffdf9;color:var(--ink)}
+.chat-mic{flex:0 0 auto;width:46px;height:46px;display:inline-flex;align-items:center;justify-content:center;border:1px solid #8a8175;background:#fffdf9;color:var(--ink);cursor:pointer}
+.chat-mic svg{width:20px;height:20px;display:block}
+.chat-mic:hover{background:var(--cream)}
+.chat-mic[aria-pressed="true"]{background:var(--gold-deep);border-color:var(--gold-deep);color:#fff}
+.chat-leer{align-self:flex-start;display:inline-flex;align-items:center;gap:6px;margin-top:9px;border:1px solid var(--line);background:var(--cream);color:#4c463d;font:11px inherit;text-transform:uppercase;letter-spacing:.06em;padding:5px 9px;cursor:pointer}
+.chat-leer:hover{background:#e0d7c6}
+.chat-leer[aria-pressed="true"]{background:var(--gold-deep);border-color:var(--gold-deep);color:#fff}
+.chat-leer svg{width:13px;height:13px}
+.chat-voz-estado{font-size:12px;color:var(--muted);margin:0;min-height:1em}
+.chat-head-acciones{display:flex;gap:8px;align-items:flex-start;flex-wrap:wrap}
+#btn-chat-voz[aria-pressed="true"]{background:var(--gold-deep);border-color:var(--gold-deep);color:#fff}
+body.sin-mic #chat-mic{display:none}
+body.sin-tts .chat-leer,body.sin-tts #btn-chat-voz{display:none}
 @media(max-width:780px){.chat-inner{padding:18px}.chat-form{flex-wrap:wrap}.chat-form .button{width:100%}}
 :focus-visible{outline:3px solid #8a6e3f;outline-offset:3px}
 @media(max-width:640px){.grid-kpis{grid-template-columns:repeat(2,1fr)}}
@@ -174,17 +187,17 @@ ul.fuentes li b{font-family:Georgia,serif;font-size:15px}
 </head>
 <body>
 <header>
-  <img id="logo-marca" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='20' viewBox='0 0 200 20'%3E%3Ctext x='0' y='15' font-family='Arial,sans-serif' font-size='14' font-weight='700' fill='%23ffffff' letter-spacing='1'%3EMEDIA LAB%3C/text%3E%3C/svg%3E" alt="Media Lab · Panel interno de precios">
+  <img id="logo-marca" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='20' viewBox='0 0 200 20'%3E%3Ctext x='0' y='15' font-family='Arial,sans-serif' font-size='14' font-weight='700' fill='%23ffffff' letter-spacing='1'%3EMEDIA LAB%3C/text%3E%3C/svg%3E" alt="Media Lab Â· Panel interno de precios">
   <button type="button" id="btn-chat-top">Consultar datos</button>
-  <button type="button" id="btn-metodologia-top">Metodología y fuentes</button>
+  <button type="button" id="btn-metodologia-top">MetodologÃ­a y fuentes</button>
 </header>
-<div class="demo-ribbon" id="demo-ribbon">DATOS PÚBLICOS DE LAS TIENDAS · LECTURA DIARIA AUTOMÁTICA · SOLO PARA USO INTERNO</div>
+<div class="demo-ribbon" id="demo-ribbon">DATOS PÃšBLICOS DE LAS TIENDAS Â· LECTURA DIARIA AUTOMÃTICA Â· SOLO PARA USO INTERNO</div>
 
 <main>
-  <p class="eyebrow" id="hero-eyebrow">Competencia · Zapatillas · Lima</p>
-  <h1 id="hero-h1">¿A qué precios está vendiendo <em>la competencia</em>?</h1>
-  <p class="intro" id="hero-intro">Panel con las zapatillas y el calzado deportivo que cada tienda publica hoy en su web, con la política de envío en Lima. La lectura es automática: cada día se vuelve a consultar cada sitio y aquí aparece lo que sus páginas muestran. No se captura a mano, no se estima ni se completa con información de terceros.</p>
-  <div class="meta-strip" id="meta-strip" aria-live="polite"><span class="chip">Cargando datos…</span></div>
+  <p class="eyebrow" id="hero-eyebrow">Competencia Â· Zapatillas Â· Lima</p>
+  <h1 id="hero-h1">Â¿A quÃ© precios estÃ¡ vendiendo <em>la competencia</em>?</h1>
+  <p class="intro" id="hero-intro">Panel con las zapatillas y el calzado deportivo que cada tienda publica hoy en su web, con la polÃ­tica de envÃ­o en Lima. La lectura es automÃ¡tica: cada dÃ­a se vuelve a consultar cada sitio y aquÃ­ aparece lo que sus pÃ¡ginas muestran. No se captura a mano, no se estima ni se completa con informaciÃ³n de terceros.</p>
+  <div class="meta-strip" id="meta-strip" aria-live="polite"><span class="chip">Cargando datosâ€¦</span></div>
 
   <section id="kpis" aria-labelledby="h-kpis">
     <p class="eyebrow" id="kpis-eyebrow">Puntos principales a comparar</p>
@@ -198,7 +211,7 @@ ul.fuentes li b{font-family:Georgia,serif;font-size:15px}
         <p class="eyebrow" id="rangos-eyebrow">Nivel de precios</p>
         <h2 id="h-rangos">Rango de precio por tienda</h2>
       </div>
-      <p id="rangos-desc">Barra: precio mínimo al máximo publicado. La línea roja marca la mediana. El eje se limita al percentil 95 del conjunto para que los modelos premium no aplasten la escala; los valores por encima se marcan con ▶.</p>
+      <p id="rangos-desc">Barra: precio mÃ­nimo al mÃ¡ximo publicado. La lÃ­nea roja marca la mediana. El eje se limita al percentil 95 del conjunto para que los modelos premium no aplasten la escala; los valores por encima se marcan con â–¶.</p>
     </div>
     <div class="range-list" id="range-list"></div>
     <p class="note" id="range-note"></p>
@@ -207,32 +220,32 @@ ul.fuentes li b{font-family:Georgia,serif;font-size:15px}
   <section id="tramos" aria-labelledby="h-tramos">
     <div class="section-head">
       <div>
-        <p class="eyebrow" id="tramos-eyebrow">Estructura del catálogo</p>
-        <h2 id="h-tramos">Distribución por tramos de precio</h2>
+        <p class="eyebrow" id="tramos-eyebrow">Estructura del catÃ¡logo</p>
+        <h2 id="h-tramos">DistribuciÃ³n por tramos de precio</h2>
       </div>
-      <p id="tramos-desc">Participación de cada tramo dentro del catálogo leído de cada tienda. Permite ver dónde compite cada una: volumen de entrada vs. segmento alto.</p>
+      <p id="tramos-desc">ParticipaciÃ³n de cada tramo dentro del catÃ¡logo leÃ­do de cada tienda. Permite ver dÃ³nde compite cada una: volumen de entrada vs. segmento alto.</p>
     </div>
     <div class="tramo-legend" id="tramo-legend"></div>
     <div id="tramo-list" style="margin-top:14px;border-top:1px solid var(--line)"></div>
-    <p class="note" id="tramos-nota">Tramos propuestos para este panel (no son una categoría oficial de las tiendas): &lt; S/ 100 · S/ 100–299 · S/ 300–599 · S/ 600–999 · S/ 1,000 o más.</p>
+    <p class="note" id="tramos-nota">Tramos propuestos para este panel (no son una categorÃ­a oficial de las tiendas): &lt; S/ 100 Â· S/ 100â€“299 Â· S/ 300â€“599 Â· S/ 600â€“999 Â· S/ 1,000 o mÃ¡s.</p>
   </section>
 
   <section id="envios" aria-labelledby="h-envios">
     <div class="section-head">
       <div>
-        <p class="eyebrow" id="envios-eyebrow">Logística</p>
-        <h2 id="h-envios">Envío y entrega en Lima</h2>
+        <p class="eyebrow" id="envios-eyebrow">LogÃ­stica</p>
+        <h2 id="h-envios">EnvÃ­o y entrega en Lima</h2>
       </div>
-      <p id="envios-desc">Campos transcritos de la política pública de cada tienda (enlace en la columna Fuente) y revalidados en cada lectura diaria: si la página deja de responder o su contenido cambia, se marca en la tabla.</p>
+      <p id="envios-desc">Campos transcritos de la polÃ­tica pÃºblica de cada tienda (enlace en la columna Fuente) y revalidados en cada lectura diaria: si la pÃ¡gina deja de responder o su contenido cambia, se marca en la tabla.</p>
     </div>
     <div class="table-wrap" role="region" tabindex="0" aria-labelledby="envios-caption">
       <table id="tabla-envios">
-        <caption id="envios-caption">Comparativo de políticas de envío en Lima por tienda</caption>
+        <caption id="envios-caption">Comparativo de polÃ­ticas de envÃ­o en Lima por tienda</caption>
         <thead>
           <tr>
             <th scope="col">Tienda</th>
             <th scope="col">Costo en Lima</th>
-            <th scope="col">Envío gratis desde</th>
+            <th scope="col">EnvÃ­o gratis desde</th>
             <th scope="col">Tiempo de entrega</th>
             <th scope="col">Fuente (verificada hoy)</th>
           </tr>
@@ -247,15 +260,15 @@ ul.fuentes li b{font-family:Georgia,serif;font-size:15px}
     <div class="section-head">
       <div>
         <p class="eyebrow" id="catalogo-eyebrow">Detalle</p>
-        <h2 id="h-catalogo">Catálogo comparado</h2>
+        <h2 id="h-catalogo">CatÃ¡logo comparado</h2>
       </div>
-      <p id="catalogo-desc">Cada fila es un producto tal como lo publica su tienda, con el enlace a la ficha de origen para verificarlo. “Precio (S/)” expresa todo en soles (con la tasa del día cuando la tienda publica en otra moneda); “Publicado” es el precio en la moneda original de la web y “Precio anterior” el precio tachado que la tienda muestra como oferta.</p>
+      <p id="catalogo-desc">Cada fila es un producto tal como lo publica su tienda, con el enlace a la ficha de origen para verificarlo. â€œPrecio (S/)â€ expresa todo en soles (con la tasa del dÃ­a cuando la tienda publica en otra moneda); â€œPublicadoâ€ es el precio en la moneda original de la web y â€œPrecio anteriorâ€ el precio tachado que la tienda muestra como oferta.</p>
     </div>
 
     <div class="controles">
       <div class="campo">
         <label for="f-buscar" id="lab-buscar">Buscar producto o marca</label>
-        <input type="search" id="f-buscar" placeholder="Ej. Catena, malbec, champagne…" autocomplete="off">
+        <input type="search" id="f-buscar" placeholder="Ej. Catena, malbec, champagneâ€¦" autocomplete="off">
       </div>
       <div class="campo">
         <label for="f-tienda" id="lab-tienda">Tienda</label>
@@ -270,10 +283,10 @@ ul.fuentes li b{font-family:Georgia,serif;font-size:15px}
         <select id="f-tramo">
           <option value="todas">Todos</option>
           <option value="0-100">&lt; S/ 100</option>
-          <option value="100-300">S/ 100 – 299</option>
-          <option value="300-600">S/ 300 – 599</option>
-          <option value="600-1000">S/ 600 – 999</option>
-          <option value="1000-max">S/ 1,000 o más</option>
+          <option value="100-300">S/ 100 â€“ 299</option>
+          <option value="300-600">S/ 300 â€“ 599</option>
+          <option value="600-1000">S/ 600 â€“ 999</option>
+          <option value="1000-max">S/ 1,000 o mÃ¡s</option>
         </select>
       </div>
       <div class="campo">
@@ -281,8 +294,8 @@ ul.fuentes li b{font-family:Georgia,serif;font-size:15px}
         <select id="f-orden">
           <option value="precio-desc">Precio: mayor a menor</option>
           <option value="precio-asc">Precio: menor a mayor</option>
-          <option value="tienda">Tienda (A–Z)</option>
-          <option value="nombre">Nombre (A–Z)</option>
+          <option value="tienda">Tienda (Aâ€“Z)</option>
+          <option value="nombre">Nombre (Aâ€“Z)</option>
         </select>
       </div>
       <div class="campo check">
@@ -292,14 +305,14 @@ ul.fuentes li b{font-family:Georgia,serif;font-size:15px}
     </div>
 
     <div class="acciones">
-      <span class="conteo" id="conteo" aria-live="polite">—</span>
-      <button type="button" class="button secundario" id="btn-mas">Cargar más</button>
+      <span class="conteo" id="conteo" aria-live="polite">â€”</span>
+      <button type="button" class="button secundario" id="btn-mas">Cargar mÃ¡s</button>
       <button type="button" class="button secundario" id="btn-csv">Descargar CSV</button>
     </div>
 
     <div class="table-wrap" role="region" tabindex="0" aria-labelledby="catalogo-caption">
       <table id="tabla-catalogo">
-        <caption id="catalogo-caption">Catálogo de productos y precios de las tiendas analizadas</caption>
+        <caption id="catalogo-caption">CatÃ¡logo de productos y precios de las tiendas analizadas</caption>
         <thead>
           <tr>
             <th scope="col">Tienda</th>
@@ -318,16 +331,16 @@ ul.fuentes li b{font-family:Georgia,serif;font-size:15px}
   </section>
 
   <section id="lecturas" aria-labelledby="h-lecturas">
-    <p class="eyebrow">Interpretación</p>
+    <p class="eyebrow">InterpretaciÃ³n</p>
     <h2 id="h-lecturas">Lecturas del corte actual</h2>
     <div class="lecturas" id="lecturas-grid"></div>
   <section id="consulta" aria-labelledby="h-consulta">
     <div class="section-head">
       <div>
         <p class="eyebrow" id="consulta-eyebrow">Consulta asistida</p>
-        <h2 id="h-consulta">Pregúntale a los datos</h2>
+        <h2 id="h-consulta">PregÃºntale a los datos</h2>
       </div>
-      <p id="consulta-desc">Escribe una pregunta en lenguaje natural y el panel responde calculando sobre la última lectura.</p>
+      <p id="consulta-desc">Escribe una pregunta en lenguaje natural y el panel responde calculando sobre la Ãºltima lectura.</p>
     </div>
     <div class="chat-ejemplos" id="consulta-ejemplos"></div>
     <div class="acciones">
@@ -337,29 +350,29 @@ ul.fuentes li b{font-family:Georgia,serif;font-size:15px}
 </main>
 
 <footer>
-  <strong id="footer-marca">Media Lab · Panel interno de precios de competencia.</strong>
-  <p id="footer-texto">Los precios, promociones y disponibilidad son los que cada tienda publica en su web al momento de la lectura y pueden cambiar sin aviso: verifique la ficha de origen antes de citar una cifra. Las diferencias entre tiendas no implican que se trate del mismo modelo, talla o marcado. Los tramos de precio, las medianas y los porcentajes de este panel son cálculos sobre los datos observados, no información publicada por las tiendas. La talla, el color y la referencia pueden hacer que dos publicaciones del mismo modelo de una misma tienda difieran; este panel no las consolida. Uso interno; requiere aprobación antes de compartirse fuera del equipo.</p>
+  <strong id="footer-marca">Media Lab Â· Panel interno de precios de competencia.</strong>
+  <p id="footer-texto">Los precios, promociones y disponibilidad son los que cada tienda publica en su web al momento de la lectura y pueden cambiar sin aviso: verifique la ficha de origen antes de citar una cifra. Las diferencias entre tiendas no implican que se trate del mismo modelo, talla o marcado. Los tramos de precio, las medianas y los porcentajes de este panel son cÃ¡lculos sobre los datos observados, no informaciÃ³n publicada por las tiendas. La talla, el color y la referencia pueden hacer que dos publicaciones del mismo modelo de una misma tienda difieran; este panel no las consolida. Uso interno; requiere aprobaciÃ³n antes de compartirse fuera del equipo.</p>
   <p id="footer-version"></p>
-  <p style="margin-top:12px"><button type="button" class="button secundario" id="btn-metodologia">Ver metodología, fuentes y limitaciones</button></p>
+  <p style="margin-top:12px"><button type="button" class="button secundario" id="btn-metodologia">Ver metodologÃ­a, fuentes y limitaciones</button></p>
 </footer>
 
 <dialog id="dlg-metodologia" aria-labelledby="dlg-title">
   <div class="dialog-inner">
     <p class="eyebrow" id="dlg-eyebrow">Trazabilidad</p>
-    <h2 id="dlg-title">Metodología y fuentes</h2>
-    <p id="dlg-leido">—</p>
+    <h2 id="dlg-title">MetodologÃ­a y fuentes</h2>
+    <p id="dlg-leido">â€”</p>
 
-    <h3>Fuentes leídas</h3>
+    <h3>Fuentes leÃ­das</h3>
     <ul class="fuentes" id="dlg-fuentes"></ul>
 
     <h3>Moneda y conversiones</h3>
-    <p id="dlg-fx">—</p>
+    <p id="dlg-fx">â€”</p>
 
-    <h3>Qué es dato observado y qué es cálculo</h3>
+    <h3>QuÃ© es dato observado y quÃ© es cÃ¡lculo</h3>
     <ul id="dlg-distincion">
-      <li><b>Observado:</b> nombre, precio, precio tachado, disponibilidad, URL e imagen tal como aparecen en la página pública de cada tienda, y los textos de la política de envío (con su enlace).</li>
-      <li><b>Cálculo propio del panel:</b> medianas, rangos, tramos, participaciones y diferencias porcentuales. Están derivados de los precios observados en la lectura y no son información publicada por las tiendas.</li>
-      <li><b>No se hace:</b> predicción, benchmarks externos, ajuste por marca, talla, color, modelo, eficiencia ni equivalencias entre productos de marcas o specs distintas.</li>
+      <li><b>Observado:</b> nombre, precio, precio tachado, disponibilidad, URL e imagen tal como aparecen en la pÃ¡gina pÃºblica de cada tienda, y los textos de la polÃ­tica de envÃ­o (con su enlace).</li>
+      <li><b>CÃ¡lculo propio del panel:</b> medianas, rangos, tramos, participaciones y diferencias porcentuales. EstÃ¡n derivados de los precios observados en la lectura y no son informaciÃ³n publicada por las tiendas.</li>
+      <li><b>No se hace:</b> predicciÃ³n, benchmarks externos, ajuste por marca, talla, color, modelo, eficiencia ni equivalencias entre productos de marcas o specs distintas.</li>
     </ul>
 
     <h3>Limitaciones conocidas</h3>
@@ -376,9 +389,12 @@ ul.fuentes li b{font-family:Georgia,serif;font-size:15px}
     <div class="chat-head">
       <div>
         <p class="eyebrow" id="chat-eyebrow">Consulta asistida</p>
-        <h2 id="chat-title">Pregúntale a los datos</h2>
+        <h2 id="chat-title">PregÃºntale a los datos</h2>
       </div>
-      <button type="button" class="button secundario" id="btn-chat-cerrar">Cerrar</button>
+      <div class="chat-head-acciones">
+        <button type="button" class="button secundario" id="btn-chat-voz" aria-pressed="false" aria-label="Leer respuestas en voz alta"><span aria-hidden="true">Voz</span></button>
+        <button type="button" class="button secundario" id="btn-chat-cerrar">Cerrar</button>
+      </div>
     </div>
     <p class="chat-intro" id="chat-intro"></p>
     <div class="chat-ejemplos" id="chat-ejemplos"></div>
@@ -402,19 +418,23 @@ ul.fuentes li b{font-family:Georgia,serif;font-size:15px}
       </div>
     </details>
 
-    <div class="chat-log" id="chat-log" role="log" tabindex="0" aria-live="polite" aria-relevant="additions text" aria-label="Conversación"></div>
+    <div class="chat-log" id="chat-log" role="log" tabindex="0" aria-live="polite" aria-relevant="additions text" aria-label="ConversaciÃ³n"></div>
 
     <form class="chat-form" id="chat-form">
       <label class="sr-only" for="chat-input" id="lab-chat-input">Escribe tu consulta</label>
-      <input type="text" id="chat-input" autocomplete="off" placeholder="Ej.: ¿cuál es la zapatilla más barata?">
+      <input type="text" id="chat-input" autocomplete="off" placeholder="Ej.: Â¿cuÃ¡l es la zapatilla mÃ¡s barata?">
+      <button type="button" class="chat-mic" id="chat-mic" aria-pressed="false" aria-label="Preguntar por voz" title="Preguntar por voz">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3z"></path><path d="M5 11a7 7 0 0 0 14 0"></path><path d="M12 18v3"></path></svg>
+      </button>
       <button type="submit" class="button" id="chat-enviar">Consultar</button>
     </form>
+    <p class="note chat-voz-estado" id="chat-voz-estado" aria-live="polite" style="margin:0"></p>
     <p class="note" id="chat-aviso" style="margin:0" aria-live="polite"></p>
   </div>
 </dialog>
 
 <script>
-// Este panel se configura a sí mismo con el "config" que trae data.json
+// Este panel se configura a sÃ­ mismo con el "config" que trae data.json
 // (emitido por scripts/actualizar.mjs a partir de config.json). Para una nueva
 // industria no se edita este archivo: se cambia config.json y se corre el motor.
 const $ = (s) => document.querySelector(s);
@@ -423,10 +443,10 @@ const escapeHtml = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '
 
 const TRAMOS_POR_DEFECTO = [
   { id: '0-100', etq: '< S/ 100', min: 0, max: 100, color: '#6b4a2b' },
-  { id: '100-300', etq: 'S/ 100–299', min: 100, max: 300, color: '#7a5c38' },
-  { id: '300-600', etq: 'S/ 300–599', min: 300, max: 600, color: '#5c564c' },
-  { id: '600-1000', etq: 'S/ 600–999', min: 600, max: 1000, color: '#3f3b34' },
-  { id: '1000-max', etq: 'S/ 1,000 o más', min: 1000, max: Infinity, color: '#1d1d1b' },
+  { id: '100-300', etq: 'S/ 100â€“299', min: 100, max: 300, color: '#7a5c38' },
+  { id: '300-600', etq: 'S/ 300â€“599', min: 300, max: 600, color: '#5c564c' },
+  { id: '600-1000', etq: 'S/ 600â€“999', min: 600, max: 1000, color: '#3f3b34' },
+  { id: '1000-max', etq: 'S/ 1,000 o mÃ¡s', min: 1000, max: Infinity, color: '#1d1d1b' },
 ];
 
 let DATOS = null;
@@ -458,7 +478,7 @@ function resolv(tpl, extra) {
     monedaLocal: (cfg && cfg.monedaLocal && cfg.monedaLocal.nombre) || 'soles',
     CODIGO_LOCAL: COD, COD_LOC: COD, LOC: COD,
     ext: EXT, EXT: EXT,
-    tramos: TRAMOS.map((t) => t.etq).join(' · '),
+    tramos: TRAMOS.map((t) => t.etq).join(' Â· '),
     ...(extra || {}),
   };
   return tmpl(tpl, ctx);
@@ -540,7 +560,7 @@ function aplicarTexto() {
   ];
   for (const [sel, txt] of pares) if (txt !== '') copiarTexto(sel, txt);
   const fv = $('#footer-version');
-  if (fv && cfg.version) fv.textContent = `Panel v${cfg.version}${cfg.versionFecha ? ' · ' + cfg.versionFecha : ''}`;
+  if (fv && cfg.version) fv.textContent = `Panel v${cfg.version}${cfg.versionFecha ? ' Â· ' + cfg.versionFecha : ''}`;
   const b = $('#f-buscar');
   if (b) b.setAttribute('placeholder', T('secciones.catalogo.buscarPlaceholder'));
   const envCols = ['colTienda', 'colCosto', 'colGratis', 'colTiempo', 'colFuente'];
@@ -583,7 +603,7 @@ async function cargar() {
     pintarTodo();
   } catch (e) {
     $('#meta-strip').innerHTML = '<span class="chip" style="border-color:#d8a9a4;background:#f7e8e6;color:#993e37"><b>' + T('errores.noLeido').replace(/\{msg\}/, escapeHtml(e.message)) + '</b></span>';
-    $('#kpis-grid').innerHTML = '<div class="panel error-panel"><div class="k-label">' + T('errores.sinDatos').replace(/\{comando\}/, '<code>node scripts/actualizar.mjs</code>') + '</div><div class="k-value">—</div><div class="k-note"></div><button type="button" class="button" id="btn-reintentar" style="margin-top:14px">' + T('errores.reintentar') + '</button></div>';
+    $('#kpis-grid').innerHTML = '<div class="panel error-panel"><div class="k-label">' + T('errores.sinDatos').replace(/\{comando\}/, '<code>node scripts/actualizar.mjs</code>') + '</div><div class="k-value">â€”</div><div class="k-note"></div><button type="button" class="button" id="btn-reintentar" style="margin-top:14px">' + T('errores.reintentar') + '</button></div>';
     $('#btn-reintentar')?.addEventListener('click', cargar);
   }
 }
@@ -626,8 +646,8 @@ function renderKpis() {
   const cards = [
     { l: T('kpis.productos.l'), v: ps.length.toLocaleString(LOCALE), n: resolv(T('kpis.productos.n'), { n: tiendasConCat, fecha: fFechaCorta(DATOS.generadoEn) }) },
     { l: T('kpis.mediana.l'), v: sMon(med), n: resolv(T('kpis.mediana.n'), { n: DATOS.resumen.convertidos, ext: EXT }) },
-    { l: T('kpis.rango.l'), v: `${sMonCorto(min)} – ${sMonCorto(max)}`, n: T('kpis.rango.n') },
-    { l: T('kpis.tachado.l'), v: `${conDesc} · ${Math.round((conDesc / ps.length) * 100)}%`, n: T('kpis.tachado.n') },
+    { l: T('kpis.rango.l'), v: `${sMonCorto(min)} â€“ ${sMonCorto(max)}`, n: T('kpis.rango.n') },
+    { l: T('kpis.tachado.l'), v: `${conDesc} Â· ${Math.round((conDesc / ps.length) * 100)}%`, n: T('kpis.tachado.n') },
     { l: T('kpis.fuentes.l'), v: `${DATOS.resumen.fuentesOk} / ${DATOS.resumen.fuentesTotal}`, n: resolv(T('kpis.fuentes.n'), { a: tiendasConCat, b: DATOS.resumen.fuentesTotal, c: DATOS.resumen.fuentesTotal - tiendasConCat }) },
     { l: T('kpis.envio.l'), v: `${gratisPublicado} de ${DATOS.envios.length}`, n: T('kpis.envio.n') },
   ];
@@ -659,7 +679,7 @@ function renderRangos() {
         <div class="range-fill${f.propia ? ' propia' : ''}" style="left:${izq}%;width:${Math.max(1.5, der - izq)}%"></div>
         <div class="range-median" style="left:${med}%"></div>
       </div>
-      <div class="range-vals">${clip ? '▶ ' : ''}<b>${sMon(f.med)}</b> ${T('rangos.mediana')}<br>${T('rangos.minText')} ${sMonCorto(f.min)} · ${T('rangos.maxText')} ${sMonCorto(f.max)}</div>
+      <div class="range-vals">${clip ? 'â–¶ ' : ''}<b>${sMon(f.med)}</b> ${T('rangos.mediana')}<br>${T('rangos.minText')} ${sMonCorto(f.min)} Â· ${T('rangos.maxText')} ${sMonCorto(f.max)}</div>
     </div>`;
   }).join('');
   $('#range-note').textContent = resolv(T('rangos.nota'), { tope: sMon(tope) });
@@ -692,18 +712,18 @@ function renderEnvios() {
     const estado = e.estado === 'ok'
       ? (e.cambioDetectado ? `<span class="badge warn">${T('secciones.envios.badgeCambio')}</span>` : `<span class="badge ok">${T('secciones.envios.badgeOk')}</span>`)
       : `<span class="badge err">${T('secciones.envios.badgeCaida')}</span>`;
-    const fecha = e.estado === 'ok' ? fFechaCorta(e.verificadoEn) : (e.observadoEn || '—');
+    const fecha = e.estado === 'ok' ? fFechaCorta(e.verificadoEn) : (e.observadoEn || 'â€”');
     return `<tr>
       <td data-label="${cols[0]}"><b>${escapeHtml(e.nombre)}</b></td>
       <td data-label="${cols[1]}">${escapeHtml(e.costoLima)}</td>
       <td data-label="${cols[2]}">${escapeHtml(e.gratisDesde)}</td>
       <td data-label="${cols[3]}">${escapeHtml(e.tiempo)}</td>
-      <td data-label="${cols[4]}"><a href="${e.fuente}" target="_blank" rel="noopener">${new URL(e.fuente).hostname.replace('www.', '')} ↗</a><br>${estado} <span style="font-size:11px;color:var(--muted)">verificado ${fecha}</span></td>
+      <td data-label="${cols[4]}"><a href="${e.fuente}" target="_blank" rel="noopener">${new URL(e.fuente).hostname.replace('www.', '')} â†—</a><br>${estado} <span style="font-size:11px;color:var(--muted)">verificado ${fecha}</span></td>
     </tr>`;
   }).join('');
   const caidas = DATOS.envios.filter((e) => e.estado !== 'ok').length;
   const cambios = DATOS.envios.filter((e) => e.cambioDetectado).length;
-  const partes = [resolv(T('secciones.envios.nota'), { fecha: DATOS.envios[0]?.observadoEn || '—' })];
+  const partes = [resolv(T('secciones.envios.nota'), { fecha: DATOS.envios[0]?.observadoEn || 'â€”' })];
   if (caidas) partes.push(resolv(T('secciones.envios.notaCaidas'), { n: caidas }));
   if (cambios) partes.push(resolv(T('secciones.envios.notaCambios'), { n: cambios }));
   $('#envios-note').textContent = partes.join(' ');
@@ -750,12 +770,12 @@ function renderLecturas() {
     {
       h: resolv(lt('segmentoAlto'), { etq: etqAlto, n: ps.filter((p) => p.precio >= altoMin).length }),
       p: altosTop.length
-        ? resolv(lt('segmentoAltoTexto'), { tiendas: altosTop.slice(0, 4).map(([t, n]) => `${nombreTienda(t)} ${n}`).join(' · '), propia: EMPRESA_NOMBRE, n: nAltosPropia })
+        ? resolv(lt('segmentoAltoTexto'), { tiendas: altosTop.slice(0, 4).map(([t, n]) => `${nombreTienda(t)} ${n}`).join(' Â· '), propia: EMPRESA_NOMBRE, n: nAltosPropia })
         : resolv(lt('segmentoAltoTextoNo'), { etq: etqAlto }),
     },
     {
       h: resolv(lt('envioTitulo'), { n: gratis.length, m: DATOS.envios.length }),
-      p: resolv(lt('envioTexto'), { gratis: gratis.map((e) => `${e.nombre} (${e.gratisDesde})`).join(' · '), n: sinCosto.length, mercado: cfg.mercado || '', sinCosto: sinCosto.map((e) => e.nombre).join(', ') }),
+      p: resolv(lt('envioTexto'), { gratis: gratis.map((e) => `${e.nombre} (${e.gratisDesde})`).join(' Â· '), n: sinCosto.length, mercado: cfg.mercado || '', sinCosto: sinCosto.map((e) => e.nombre).join(', ') }),
     },
   ];
   if (DATOS.resumen.convertidos) {
@@ -778,16 +798,16 @@ function renderMetodologia() {
     const badge = f.estado === 'ok' && f.productos > 0
       ? '<span class="badge ok">OK</span>'
       : f.estado === 'ok'
-        ? '<span class="badge warn">Sin catálogo de precios</span>'
+        ? '<span class="badge warn">Sin catÃ¡logo de precios</span>'
         : f.estado === 'error'
-          ? '<span class="badge err">Error · datos anteriores</span>'
-          : '<span class="badge warn">Sin catálogo</span>';
-    return `<li><b>${escapeHtml(f.nombre)}</b> · ${escapeHtml(f.plataforma)} ${badge}
+          ? '<span class="badge err">Error Â· datos anteriores</span>'
+          : '<span class="badge warn">Sin catÃ¡logo</span>';
+    return `<li><b>${escapeHtml(f.nombre)}</b> Â· ${escapeHtml(f.plataforma)} ${badge}
       <div style="font-size:12px;color:var(--muted);margin-top:5px">
-        Segmento leído: ${escapeHtml(f.categoria || '—')} · Fuente de datos: <code>${escapeHtml(f.fuenteDato || '—')}</code> ·
-        ${f.productos} producto(s) · lectura ${fFecha(f.leidoEn)}${f.datosDe ? ' · conservando datos del ' + fFechaCorta(f.datosDe) : ''}${f.error ? ' · error: ' + escapeHtml(f.error) : ''}
+        Segmento leÃ­do: ${escapeHtml(f.categoria || 'â€”')} Â· Fuente de datos: <code>${escapeHtml(f.fuenteDato || 'â€”')}</code> Â·
+        ${f.productos} producto(s) Â· lectura ${fFecha(f.leidoEn)}${f.datosDe ? ' Â· conservando datos del ' + fFechaCorta(f.datosDe) : ''}${f.error ? ' Â· error: ' + escapeHtml(f.error) : ''}
         ${f.nota ? '<br>' + escapeHtml(f.nota) : ''}
-        <br><a href="${f.url}" target="_blank" rel="noopener">${f.url} ↗</a>
+        <br><a href="${f.url}" target="_blank" rel="noopener">${f.url} â†—</a>
       </div></li>`;
   }).join('');
   const tiendasExt = [...new Set(DATOS.productos.filter((p) => p.convertido).map((p) => p.tienda))].map((i) => nombreTienda(i)).join(', ');
@@ -866,15 +886,15 @@ function pintarTabla() {
     const publicado = p.convertido
       ? `${SIM_E} ${FORMATO.format(p.precioOriginal)}<span class="precio-conv">${resolv(T('secciones.catalogo.publicadoEn'), { ext: EXT })}</span>`
       : `${p.moneda === EXT ? SIM_E : SIM} ${FORMATO.format(p.precio)}`;
-    const anterior = p.precioLista ? sMon(p.precioLista) : '—';
+    const anterior = p.precioLista ? sMon(p.precioLista) : 'â€”';
     return `<tr>
       <td data-label="${colsCat[0]}">${escapeHtml(t)}</td>
       <td data-label="${colsCat[1]}"><div class="prod">${p.imagen ? `<img class="thumb" src="${p.imagen}" alt="" loading="lazy" decoding="async">` : ''}<div><div class="p-nombre">${escapeHtml(p.nombre)}</div><div class="p-marca">${escapeHtml(p.marca || p.categoria || '')}</div></div></div></td>
-      <td data-label="${colsCat[2]}" class="num"><b>${p.convertido ? '≈ ' : ''}${sMon(p.precio)}</b></td>
+      <td data-label="${colsCat[2]}" class="num"><b>${p.convertido ? 'â‰ˆ ' : ''}${sMon(p.precio)}</b></td>
       <td data-label="${colsCat[3]}" class="num">${publicado}</td>
       <td data-label="${colsCat[4]}" class="num">${anterior}</td>
       <td data-label="${colsCat[5]}">${estado}</td>
-      <td data-label="${colsCat[6]}">${p.url ? `<a href="${p.url}" target="_blank" rel="noopener">${T('secciones.catalogo.verFicha')} ↗</a>` : '—'}</td>
+      <td data-label="${colsCat[6]}">${p.url ? `<a href="${p.url}" target="_blank" rel="noopener">${T('secciones.catalogo.verFicha')} â†—</a>` : 'â€”'}</td>
     </tr>`;
   }).join('');
   $('#conteo').textContent = resolv(T('secciones.catalogo.conteo'), { a: Math.min(VISIBLES, FILA.length), b: FILA.length, n: DATOS.productos.length });
@@ -900,7 +920,7 @@ function csv() {
       nombreTienda(p.tienda), p.nombre, p.marca || '', p.precio.toFixed(2),
       p.convertido ? `${SIM_E}${p.precioOriginal.toFixed(2)}` : (p.moneda === EXT ? `${SIM_E}${p.precio.toFixed(2)}` : `${SIM}${p.precio.toFixed(2)}`),
       p.precioLista ? p.precioLista.toFixed(2) : '',
-      p.disponible === true ? 'Sí' : p.disponible === false ? 'No' : 'No publicado',
+      p.disponible === true ? 'SÃ­' : p.disponible === false ? 'No' : 'No publicado',
       p.url || '', DATOS.generadoEn,
     ];
     if (conSegmento) base.splice(7, 0, p.segmento ? ((cfg.segmentos || []).find((s) => s.id === p.segmento)?.etiqueta || p.segmento) : '');
@@ -995,7 +1015,7 @@ function ambitoTexto(f) {
   if (f.min != null && f.max != null) parts.push(` entre ${sMon(f.min)} y ${sMon(f.max)}`);
   else if (f.min != null) parts.push(' desde ' + sMon(f.min));
   else if (f.max != null) parts.push(' hasta ' + sMon(f.max));
-  return parts.length ? parts.join('') : ' del catálogo';
+  return parts.length ? parts.join('') : ' del catÃ¡logo';
 }
 function ayudaChat() {
   const ej = Array.isArray(T('chat.ejemplos')) ? T('chat.ejemplos') : [];
@@ -1004,16 +1024,16 @@ function ayudaChat() {
 function extremoChat(ps, f, dir) {
   const sorted = [...ps].sort((a, b) => (dir === 'min' ? a.precio - b.precio : b.precio - a.precio));
   const best = sorted[0];
-  const pal = dir === 'min' ? 'Más barato' : 'Más caro';
+  const pal = dir === 'min' ? 'MÃ¡s barato' : 'MÃ¡s caro';
   let html = `<p>${pal}${ambitoTexto(f)}: <b>${escapeHtml(best.nombre)}</b>, en <b>${escapeHtml(nombreTienda(best.tienda))}</b>, a <b>${sMon(best.precio)}</b>.</p>`;
-  html += `<p class="chat-sub">${ps.length} ${chatEnt2()} en la selección · precio ${dir === 'min' ? 'desde' : 'hasta'} ${sMon(best.precio)}.</p>`;
+  html += `<p class="chat-sub">${ps.length} ${chatEnt2()} en la selecciÃ³n Â· precio ${dir === 'min' ? 'desde' : 'hasta'} ${sMon(best.precio)}.</p>`;
   html += tablaChat(C_PROD(), sorted.slice(0, 8).map(filaProd));
   return html;
 }
 function topChat(ps, f, asc) {
   const n = f.topN || 10;
   const sorted = [...ps].sort((a, b) => (asc ? a.precio - b.precio : b.precio - a.precio)).slice(0, n);
-  let html = `<p>Top ${sorted.length} ${asc ? 'más baratos' : 'más caros'}${ambitoTexto(f)}:</p>`;
+  let html = `<p>Top ${sorted.length} ${asc ? 'mÃ¡s baratos' : 'mÃ¡s caros'}${ambitoTexto(f)}:</p>`;
   html += tablaChat(C_PROD(), sorted.map(filaProd));
   return html;
 }
@@ -1026,9 +1046,9 @@ function estadisticasChat(ps, f) {
   });
   let best = null;
   Object.entries(g).forEach(([t, arr]) => { const m = mediana(arr.map((p) => p.precio)); if (best == null || m < best.m) best = { t, m }; });
-  let html = `<p><b>${ps.length}</b> ${chatEnt2()}${ambitoTexto(f)}. Precio promedio <b>${sMon(avg)}</b> · mediana <b>${sMon(med)}</b>.</p>`;
+  let html = `<p><b>${ps.length}</b> ${chatEnt2()}${ambitoTexto(f)}. Precio promedio <b>${sMon(avg)}</b> Â· mediana <b>${sMon(med)}</b>.</p>`;
   if (Object.keys(g).length > 1 && best) html += `<p class="chat-sub">Menor mediana: <b>${escapeHtml(nombreTienda(best.t))}</b> (${sMon(best.m)}).</p>`;
-  html += tablaChat([{ h: chatColT() }, { h: chatColN(), num: true }, { h: 'Promedio', num: true }, { h: 'Mediana', num: true }, { h: 'Mín', num: true }, { h: 'Máx', num: true }], filas);
+  html += tablaChat([{ h: chatColT() }, { h: chatColN(), num: true }, { h: 'Promedio', num: true }, { h: 'Mediana', num: true }, { h: 'MÃ­n', num: true }, { h: 'MÃ¡x', num: true }], filas);
   return html;
 }
 function contarChat(ps, f) {
@@ -1040,18 +1060,18 @@ function contarChat(ps, f) {
 }
 function rangoChat(ps, f) {
   const v = ps.map((p) => p.precio);
-  let html = `<p><b>${ps.length}</b> ${chatEnt2()}${ambitoTexto(f)}. Mínimo <b>${sMon(Math.min(...v))}</b> · mediana <b>${sMon(mediana(v))}</b> · máximo <b>${sMon(Math.max(...v))}</b>.</p>`;
+  let html = `<p><b>${ps.length}</b> ${chatEnt2()}${ambitoTexto(f)}. MÃ­nimo <b>${sMon(Math.min(...v))}</b> Â· mediana <b>${sMon(mediana(v))}</b> Â· mÃ¡ximo <b>${sMon(Math.max(...v))}</b>.</p>`;
   const filas = Object.entries(porTienda(ps)).sort((a, b) => nombreTienda(a[0]).localeCompare(nombreTienda(b[0]), 'es')).map(([t, arr]) => {
     const vv = arr.map((p) => p.precio);
     return [escapeHtml(nombreTienda(t)), String(arr.length), sMon(Math.min(...vv)), sMon(mediana(vv)), sMon(Math.max(...vv))];
   });
-  html += tablaChat([{ h: chatColT() }, { h: chatColN(), num: true }, { h: 'Mín', num: true }, { h: 'Mediana', num: true }, { h: 'Máx', num: true }], filas);
+  html += tablaChat([{ h: chatColT() }, { h: chatColN(), num: true }, { h: 'MÃ­n', num: true }, { h: 'Mediana', num: true }, { h: 'MÃ¡x', num: true }], filas);
   return html;
 }
 function busquedaChat(ps, f) {
   const sorted = [...ps].sort((a, b) => a.precio - b.precio);
   const v = ps.map((p) => p.precio);
-  let html = `<p><b>${ps.length}</b> coincidencia(s) para “${escapeHtml(f.tokens.join(' '))}”: de <b>${sMon(Math.min(...v))}</b> a <b>${sMon(Math.max(...v))}</b>.</p>`;
+  let html = `<p><b>${ps.length}</b> coincidencia(s) para â€œ${escapeHtml(f.tokens.join(' '))}â€: de <b>${sMon(Math.min(...v))}</b> a <b>${sMon(Math.max(...v))}</b>.</p>`;
   html += tablaChat(C_PROD(), sorted.slice(0, 8).map(filaProd));
   return html;
 }
@@ -1061,7 +1081,7 @@ function descuentoChat(ps, f) {
   const rows = con.map((p) => ({ p, pct: Math.round((1 - p.precio / p.precioLista) * 100) })).sort((a, b) => b.pct - a.pct).slice(0, 10)
     .map((x) => [`<b>${escapeHtml(x.p.nombre)}</b>`, escapeHtml(nombreTienda(x.p.tienda)), sMon(x.p.precio), sMon(x.p.precioLista), x.pct + '%']);
   let html = `<p><b>${con.length}</b> de ${ps.length} ${chatEnt2()} (${Math.round((con.length / ps.length) * 100)}%)${ambitoTexto(f)} muestran un precio anterior mayor al de contado.</p>`;
-  html += `<p class="chat-sub">El “precio anterior” es la referencia que publica la tienda; el % es la diferencia frente a ese valor, no un ahorro verificado.</p>`;
+  html += `<p class="chat-sub">El â€œprecio anteriorâ€ es la referencia que publica la tienda; el % es la diferencia frente a ese valor, no un ahorro verificado.</p>`;
   html += tablaChat([{ h: chatColP() }, { h: chatColT() }, { h: 'Precio', num: true }, { h: 'Precio anterior', num: true }, { h: 'Dif.', num: true }], rows);
   return html;
 }
@@ -1079,7 +1099,7 @@ function disponibilidadChat(ps, f) {
 }
 function citaChat() {
   const op = (DATOS.fuentes || []).map((ft) => ft.nombre).join(', ');
-  return `data.json · ${op} · lectura ${fFechaCorta(DATOS.generadoEn)}`;
+  return `data.json Â· ${op} Â· lectura ${fFechaCorta(DATOS.generadoEn)}`;
 }
 function respuestaLocal(q) {
   const nq = norm(q);
@@ -1109,12 +1129,12 @@ function respuestaLocal(q) {
 }
 
 function burbujaUsuario(q) { return `<div class="chat-msg chat-u"><span class="chat-rol">${escapeHtml(T('chat.etiquetaUsuario'))}</span><div class="chat-bubble">${escapeHtml(q)}</div></div>`; }
-function burbujaAsistente(html, cita) { return `<div class="chat-msg chat-a"><span class="chat-rol">${escapeHtml(T('chat.etiquetaAsistente'))}</span><div class="chat-bubble">${html}${cita ? `<div class="chat-cita">${escapeHtml(T('chat.citaPrefijo'))}: ${escapeHtml(cita)}</div>` : ''}</div></div>`; }
+function burbujaAsistente(html, cita) { return `<div class="chat-msg chat-a"><span class="chat-rol">${escapeHtml(T('chat.etiquetaAsistente'))}</span><div class="chat-bubble">${html}${cita ? `<div class="chat-cita">${escapeHtml(T('chat.citaPrefijo'))}: ${escapeHtml(cita)}</div>` : ''}<button type="button" class="chat-leer" aria-pressed="false" aria-label="${escapeHtml(T('chat.voz.leerEtiqueta') || 'Leer respuesta en voz alta')}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"></path><path d="M17 8a5 5 0 0 1 0 8"></path></svg><span>${escapeHtml(T('chat.voz.leerEtiqueta') || 'Leer')}</span></button></div></div>`; }
 function burbujaNota(txt) { return `<div class="chat-msg chat-a"><div class="chat-bubble" style="background:#f6eddd;border-color:#dcc39a"><p class="chat-nota">${escapeHtml(txt)}</p></div></div>`; }
 function miniMd(s) {
   let t = escapeHtml(String(s == null ? '' : s));
   t = t.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>').replace(/`([^`]+)`/g, '<code>$1</code>');
-  return t.split(/\r?\n/).map((l) => (/^\s*[-*•]\s+/.test(l) ? '• ' + l.replace(/^\s*[-*•]\s+/, '') : l)).join('<br>');
+  return t.split(/\r?\n/).map((l) => (/^\s*[-*â€¢]\s+/.test(l) ? 'â€¢ ' + l.replace(/^\s*[-*â€¢]\s+/, '') : l)).join('<br>');
 }
 function consultarIA(pregunta, endpoint) {
   const ctrl = new AbortController();
@@ -1140,13 +1160,14 @@ async function enviarConsulta(q) {
   const endpoint = ($('#ia-endpoint') ? $('#ia-endpoint').value.trim() : '');
   const usarIA = $('#ia-activar') && $('#ia-activar').checked && endpoint;
   if (usarIA) {
-    log.insertAdjacentHTML('beforeend', `<div class="chat-msg chat-a" id="chat-espera"><span class="chat-rol">${escapeHtml(T('chat.etiquetaAsistente'))}</span><div class="chat-bubble chat-espera">…</div></div>`);
+    log.insertAdjacentHTML('beforeend', `<div class="chat-msg chat-a" id="chat-espera"><span class="chat-rol">${escapeHtml(T('chat.etiquetaAsistente'))}</span><div class="chat-bubble chat-espera">â€¦</div></div>`);
     log.scrollTop = log.scrollHeight;
     try {
       const txt = await consultarIA(q, endpoint);
-      if (!txt) throw new Error('respuesta vacía');
+      if (!txt) throw new Error('respuesta vacÃ­a');
       $('#chat-espera')?.remove();
       log.insertAdjacentHTML('beforeend', burbujaAsistente(miniMd(txt), T('chat.iaCita')));
+      leerAuto(log.lastElementChild);
       log.scrollTop = log.scrollHeight; return;
     } catch (e) {
       $('#chat-espera')?.remove();
@@ -1155,6 +1176,7 @@ async function enviarConsulta(q) {
   }
   const r = respuestaLocal(q);
   log.insertAdjacentHTML('beforeend', burbujaAsistente(r.html, r.cita));
+  leerAuto(log.lastElementChild);
   log.scrollTop = log.scrollHeight;
 }
 function abrirChat() { const d = $('#dlg-chat'); if (d.showModal) d.showModal(); else d.open = true; setTimeout(() => $('#chat-input')?.focus(), 40); }
@@ -1182,6 +1204,7 @@ function aplicarTextoChat() {
   const ce = $('#consulta-ejemplos'); if (ce) ce.innerHTML = chips;
   const che = $('#chat-ejemplos'); if (che) che.innerHTML = chips;
   document.querySelectorAll('.chat-chip').forEach((c) => c.addEventListener('click', () => { abrirChat(); enviarConsulta(c.getAttribute('data-q')); }));
+  aplicarTextoVoz();
 }
 const chatDlg = $('#dlg-chat');
 $('#btn-abrir-chat').addEventListener('click', abrirChat);
@@ -1204,6 +1227,106 @@ $('#btn-ia-guardar').addEventListener('click', () => {
   try { localStorage.setItem(CHAT_LS_ENDPOINT, ep); localStorage.setItem(CHAT_LS_ACTIVO, on ? '1' : '0'); } catch (e) { /* noop */ }
   $('#ia-estado').textContent = on && ep ? T('chat.iaActivo') : T('chat.iaInactivo');
 });
+
+/* ================= Voz (dictado + lectura en voz alta) ================= */
+const CHAT_VOZ_LS = 'mlos-chat-voz-auto';
+const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
+const TTS_OK = 'speechSynthesis' in window;
+let reconocedor = null, escuchando = false;
+const vozT = (k, d) => T('chat.voz.' + k) || d;
+function vozAviso(txt) { const n = $('#chat-voz-estado'); if (n) n.textContent = txt || ''; }
+function setEscuchando(on) {
+  escuchando = on;
+  const b = $('#chat-mic'); if (!b) return;
+  b.setAttribute('aria-pressed', on ? 'true' : 'false');
+  const lab = on ? vozT('escuchando', 'Escuchandoâ€¦') : vozT('micEtiqueta', 'Preguntar por voz');
+  b.setAttribute('aria-label', lab); b.setAttribute('title', lab);
+}
+function alternarMic() {
+  if (!SpeechRec) { vozAviso(vozT('noSoportado', 'Tu navegador no permite dictado por voz')); return; }
+  if (escuchando) { try { reconocedor.stop(); } catch (e) { /* noop */ } return; }
+  reconocedor = new SpeechRec();
+  reconocedor.lang = vozT('idioma', 'es-PE');
+  reconocedor.continuous = false; reconocedor.interimResults = true; reconocedor.maxAlternatives = 1;
+  let final = '', capturado = false;
+  reconocedor.onresult = (e) => {
+    let intr = '';
+    for (let i = e.resultIndex; i < e.results.length; i++) { const tr = e.results[i][0].transcript; if (e.results[i].isFinal) { final += tr; capturado = true; } else { intr += tr; } }
+    const inp = $('#chat-input'); if (inp) inp.value = (final + intr).trim();
+  };
+  reconocedor.onerror = (e) => { setEscuchando(false); vozAviso((e.error === 'not-allowed' || e.error === 'service-not-allowed') ? vozT('sinPermiso', 'Permiso de micrÃ³fono bloqueado') : vozT('error', 'No se pudo reconocer la voz')); };
+  reconocedor.onend = () => { setEscuchando(false); vozAviso(''); const v = (($('#chat-input') || {}).value || '').trim(); if (capturado && v) enviarConsulta(v); };
+  try { reconocedor.start(); setEscuchando(true); vozAviso(vozT('escuchando', 'Escuchandoâ€¦ habla ahora')); } catch (e) { setEscuchando(false); vozAviso(vozT('error', 'No se pudo iniciar el micrÃ³fono')); }
+}
+function normVoz(t) { return String(t || '').replace(/S\/\s?([0-9][0-9.,]*[0-9]|[0-9])/g, '$1 soles').replace(/[\u201c\u201d]/g, '"').replace(/\s+/g, ' ').trim(); }
+function textoParaVoz(el) {
+  if (!el) return '';
+  const c = el.cloneNode(true);
+  c.querySelectorAll('.chat-cita, .chat-leer').forEach((n) => n.remove());
+  const partes = [];
+  c.querySelectorAll('p, li').forEach((n) => { const t = (n.textContent || '').trim(); if (t) partes.push(t); });
+  const filas = c.querySelectorAll('.chat-tabla tbody tr');
+  if (filas.length) {
+    partes.push(vozT('resultados', 'Resultados'));
+    [].slice.call(filas, 0, 6).forEach((tr) => partes.push([].map.call(tr.children, (td) => (td.textContent || '').trim()).filter(Boolean).join(', ')));
+    if (filas.length > 6) partes.push('y ' + (filas.length - 6) + ' mÃ¡s');
+  }
+  return normVoz(partes.join('. ').replace(/\.{2,}/g, '.'));
+}
+function hablarTexto(txt, btn) {
+  if (!TTS_OK) return;
+  const limpio = normVoz(txt); if (!limpio) return;
+  try { speechSynthesis.cancel(); } catch (e) { /* noop */ }
+  const u = new SpeechSynthesisUtterance(limpio);
+  u.lang = vozT('idioma', 'es-PE');
+  let voces = []; try { voces = speechSynthesis.getVoices() || []; } catch (e) { voces = []; }
+  const pref = [u.lang, 'es-419', 'es-MX', 'es-US', 'es-ES'];
+  let v = null;
+  for (let i = 0; i < pref.length && !v; i++) v = voces.find((x) => (x.lang || '').toLowerCase() === pref[i].toLowerCase());
+  if (!v) v = voces.find((x) => (x.lang || '').toLowerCase().indexOf('es') === 0);
+  if (v) u.voice = v;
+  u.onstart = () => { if (btn) btn.setAttribute('aria-pressed', 'true'); };
+  u.onend = u.onerror = () => { if (btn) btn.setAttribute('aria-pressed', 'false'); };
+  try { speechSynthesis.speak(u); } catch (e) { if (btn) btn.setAttribute('aria-pressed', 'false'); }
+}
+function leerBurbuja(b) { const bubble = b.closest('.chat-bubble'); if (bubble) hablarTexto(textoParaVoz(bubble), b); }
+function leerAuto(el) {
+  const bv = $('#btn-chat-voz');
+  if (!bv || bv.getAttribute('aria-pressed') !== 'true' || !TTS_OK || !el) return;
+  const bubble = el.querySelector('.chat-bubble');
+  if (bubble) hablarTexto(textoParaVoz(bubble), null);
+}
+function aplicarTextoVoz() {
+  const mic = $('#chat-mic');
+  if (mic && SpeechRec) { const lab = vozT('micEtiqueta', 'Preguntar por voz'); mic.setAttribute('aria-label', lab); mic.setAttribute('title', lab); }
+  const bv = $('#btn-chat-voz');
+  if (bv) bv.setAttribute('aria-label', vozT('autoEtiqueta', 'Leer respuestas en voz alta'));
+  if (!SpeechRec) vozAviso(vozT('noSoportado', 'Tu navegador no permite dictado por voz'));
+}
+(function initChatVoz() {
+  if (!SpeechRec) document.body.classList.add('sin-mic');
+  if (!TTS_OK) document.body.classList.add('sin-tts');
+  const mic = $('#chat-mic');
+  if (mic) mic.addEventListener('click', alternarMic);
+  const bv = $('#btn-chat-voz');
+  if (bv) {
+    try { if (localStorage.getItem(CHAT_VOZ_LS) === '1') bv.setAttribute('aria-pressed', 'true'); } catch (e) { /* noop */ }
+    bv.addEventListener('click', () => {
+      const on = bv.getAttribute('aria-pressed') !== 'true';
+      bv.setAttribute('aria-pressed', on ? 'true' : 'false');
+      vozAviso(on ? vozT('autoActivo', 'Lectura automÃ¡tica activada') : vozT('autoInactivo', 'Lectura automÃ¡tica desactivada'));
+      try { localStorage.setItem(CHAT_VOZ_LS, on ? '1' : '0'); } catch (e) { /* noop */ }
+    });
+  }
+  const log = $('#chat-log');
+  if (log) log.addEventListener('click', (e) => {
+    const b = e.target.closest('.chat-leer'); if (!b) return;
+    if (TTS_OK && speechSynthesis.speaking) { try { speechSynthesis.cancel(); } catch (err) { /* noop */ } b.setAttribute('aria-pressed', 'false'); return; }
+    leerBurbuja(b);
+  });
+  const dlgChat = $('#dlg-chat');
+  if (dlgChat) dlgChat.addEventListener('close', () => { if (TTS_OK) { try { speechSynthesis.cancel(); } catch (e) { /* noop */ } } });
+})();
 
 $('#f-buscar').addEventListener('input', (e) => { F.q = e.target.value; aplicarFiltros(); });
 $('#f-tienda').addEventListener('change', (e) => { F.tienda = e.target.value; aplicarFiltros(); });

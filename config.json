@@ -441,7 +441,21 @@
       "iaActivo": "IA externa activa.",
       "iaInactivo": "Motor local (sin conexión externa).",
       "iaError": "No pude consultar la IA externa; respondo con el motor local.",
-      "iaCita": "IA externa (proxy)"
+      "iaCita": "IA externa (proxy)",
+      "voz": {
+        "habilitada": true,
+        "idioma": "es-PE",
+        "micEtiqueta": "Preguntar por voz",
+        "escuchando": "Escuchando… habla ahora",
+        "noSoportado": "Tu navegador no permite dictado por voz; escribe tu consulta.",
+        "sinPermiso": "Permiso de micrófono bloqueado. Habilítalo en el navegador para dictar.",
+        "error": "No se pudo reconocer la voz; escribe tu consulta.",
+        "leerEtiqueta": "Leer respuesta en voz alta",
+        "autoEtiqueta": "Leer respuestas en voz alta",
+        "autoActivo": "Lectura automática activada",
+        "autoInactivo": "Lectura automática desactivada",
+        "resultados": "Resultados"
+      }
     },
     "errores": {
       "noLeido": "No se pudo leer data.json. {msg}. Abre el panel por un servidor web local o vuelve a intentarlo.",
